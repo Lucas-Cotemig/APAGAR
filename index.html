@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Davi - Portfólio</title>
+
+  <!-- fonte do google -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- biblioteca AOS (animação ao rolar a página) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- MENU -->
+  <header class="cabecalho">
+    <nav class="nav">
+      <a href="#inicio" class="logo">Ld</a>
+
+      <ul class="menu" id="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <div class="botoes-nav">
+        <button id="botaoTema" class="botao-tema" aria-label="Trocar tema">🌙</button>
+        <button id="botaoMenu" class="botao-menu" aria-label="Abrir menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- INICIO -->
+    <section id="inicio" class="inicio">
+      <div class="container">
+        <p class="ola">Olá, meu nome é</p>
+        <h1>Lucas Davi</h1>
+        <h2>Sou <span id="texto-digitando"></span></h2>
+        <p class="descricao">
+          Estudo no Cotemig Barroca e estou aprendendo a criar a parte de trás dos sistemas,
+          usando Java, C# e MySQL.
+        </p>
+        <div class="botoes-inicio">
+          <a href="#projetos" class="botao">Ver projetos</a>
+          <a href="https://github.com/SEU-USUARIO" target="_blank" class="botao botao-borda">Meu GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="secao">
+      <div class="container sobre">
+        <img src="img/foto.svg" alt="Foto de Ld" class="foto" data-aos="fade-up">
+
+        <div data-aos="fade-up">
+          <h2 class="titulo">Sobre mim</h2>
+          <p>
+            Oi! Sou o Lucas, tenho 16 anos e faço o curso técnico de informática
+            no Cotemig Barroca.
+          </p>
+          <p>
+            Comecei a programar na escola e descobri que gosto mais da parte do back-end:
+            a lógica, as regras do sistema e o banco de dados.
+          </p>
+          <p>
+            Ainda estou aprendendo, mas já fiz alguns projetos em Java e C#.
+            Estou procurando uma oportunidade de estágio para aprender mais na prática.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="secao secao-cinza">
+      <div class="container">
+        <h2 class="titulo">Habilidades</h2>
+
+        <div class="cards">
+          <div class="card" data-aos="fade-up">
+            <h3>Java</h3>
+            <p>Orientação a objetos, classes, herança e conexão com banco de dados.</p>
+          </div>
+          <div class="card" data-aos="fade-up">
+            <h3>C#</h3>
+            <p>Programas de console e primeiros passos com .NET.</p>
+          </div>
+          <div class="card" data-aos="fade-up">
+            <h3>MySQL</h3>
+            <p>Criar tabelas, relacionamentos e consultas com SELECT, JOIN e GROUP BY.</p>
+          </div>
+          <div class="card" data-aos="fade-up">
+            <h3>Git e GitHub</h3>
+            <p>Guardar e versionar meus projetos.</p>
+          </div>
+          <div class="card" data-aos="fade-up">
+            <h3>HTML, CSS e JS</h3>
+            <p>O básico para fazer páginas como esta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="secao">
+      <div class="container">
+        <h2 class="titulo">Projetos</h2>
+
+        <div class="cards">
+          <div class="card projeto" data-aos="fade-up">
+            <img src="img/projeto1.svg" alt="Tela do sistema de biblioteca">
+            <h3>Sistema de Biblioteca</h3>
+            <p>Feito em Java com MySQL.</p>
+            <button class="botao botao-pequeno" onclick="abrirProjeto(0)">Ver mais</button>
+          </div>
+
+          <div class="card projeto" data-aos="fade-up">
+            <img src="img/projeto2.svg" alt="Tela do controle de estoque">
+            <h3>Controle de Estoque</h3>
+            <p>Feito em C#.</p>
+            <button class="botao botao-pequeno" onclick="abrirProjeto(1)">Ver mais</button>
+          </div>
+
+          <div class="card projeto" data-aos="fade-up">
+            <img src="img/projeto3.svg" alt="Diagrama do banco de dados do boletim">
+            <h3>Banco de Dados de Boletim</h3>
+            <p>Feito em MySQL.</p>
+            <button class="botao botao-pequeno" onclick="abrirProjeto(2)">Ver mais</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="secao secao-cinza">
+      <div class="container">
+        <h2 class="titulo">Contato</h2>
+        <p class="centro">Quer falar comigo? É só preencher aqui embaixo.</p>
+
+        <form id="formulario" class="formulario" novalidate>
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" placeholder="Seu nome completo">
+          <span class="erro" id="erroNome"></span>
+
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" placeholder="(00) 00000-0000" maxlength="15">
+          <span class="erro" id="erroTelefone"></span>
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="seuemail@exemplo.com">
+          <span class="erro" id="erroEmail"></span>
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" rows="5" maxlength="300" placeholder="Escreva sua mensagem"></textarea>
+          <span class="contador" id="contador">0/300</span>
+          <span class="erro" id="erroMensagem"></span>
+
+          <button type="submit" class="botao">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <p>Lucas Davi - 2026</p>
+    <p>
+      <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a> |
+      <a href="https://github.com/SEU-USUARIO" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank">LinkedIn</a>
+    </p>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-caixa">
+      <span class="fechar" onclick="fecharModal()">&times;</span>
+      <h2 id="modalTitulo"></h2>
+      <p id="modalTexto"></p>
+      <button class="botao" onclick="fecharModal()">Fechar</button>
+    </div>
+  </div>
+
+  <!-- bibliotecas -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
